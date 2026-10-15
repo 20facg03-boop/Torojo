@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- GOOGLE ANALYTICS AQUÍ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toro Rojo Empresas (Proyecto ficticio) | Convenios Corporativos y Venta Mayorista en Chile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-dark: #0a192f;
+      --primary-blue: #102a52;
+      --accent-red: #dc2626;
+      --accent-red-hover: #b91c1c;
+      --accent-gold: #f59e0b;
+      --silver-bg: #f1f5f9;
+      --silver-border: #cbd5e1;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #f8fafc;
+      --white: #ffffff;
+      --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --shadow-sm: 0 2px 4px rgba(10, 25, 47, 0.06);
+      --shadow-md: 0 8px 24px rgba(10, 25, 47, 0.1);
+      --shadow-lg: 0 16px 36px rgba(10, 25, 47, 0.16);
+      --border-radius: 12px;
+      --transition: all 0.25s ease-in-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--text-main);
+      background-color: var(--silver-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* CONTENEDOR GENERAL */
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* AVISO PROYECTO FICTICIO */
+    .aviso-ficticio {
+      background-color: var(--accent-gold);
+      color: var(--primary-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 8px 20px;
+      line-height: 1.4;
+    }
+
+    /* HEADER & NAVEGACIÓN */
+    header {
+      background-color: var(--primary-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--accent-red), #991b1b);
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--white);
+      box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text span {
+      color: var(--accent-gold);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-left: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-link {
+      color: var(--silver-border);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--white);
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* BOTONES CTA */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .btn-nav {
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      background-color: var(--accent-red);
+      color: var(--white);
+    }
+
+    .btn-nav:hover {
+      background-color: var(--accent-red-hover);
+      transform: translateY(-1px);
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--accent-red), #b91c1c);
+      color: var(--white);
+      box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35);
+    }
+
+    .cta-button:hover {
+      background: linear-gradient(135deg, #ef4444, var(--accent-red));
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(220, 38, 38, 0.45);
+    }
+
+    .btn-secondary {
+      background-color: var(--white);
+      color: var(--primary-dark);
+      border: 2px solid var(--silver-border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary-blue);
+      color: var(--primary-blue);
+      background-color: #f8fafc;
+    }
+
+    .microcopy {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .microcopy-light {
+      color: #94a3b8;
+    }
+
+    /* SECCIÓN 1: HERO */
+    #hero {
+      background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+      color: var(--white);
+      padding: 70px 0 90px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(220, 38, 38, 0.2) 0%, rgba(220, 38, 38, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 48px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background-color: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      color: var(--accent-gold);
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      margin-bottom: 32px;
+      max-width: 540px;
+      line-height: 1.5;
+    }
+
+    .hero-cta-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    /* ILUSTRACIÓN CSS / SVG DEL PRODUCTO */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .product-stage {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      width: 100%;
+      max-width: 380px;
+    }
+
+    /* Frigobar CSS */
+    .fridge {
+      width: 140px;
+      height: 220px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 3px solid #64748b;
+      border-radius: 12px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .fridge-header {
+      width: 100%;
+      background: var(--accent-red);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-align: center;
+      padding: 3px 0;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .fridge-glass {
+      width: 100%;
+      flex-grow: 1;
+      background: rgba(148, 163, 184, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 8px 4px;
+      position: relative;
+    }
+
+    .fridge-shelf {
+      width: 90%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .mini-can-row {
+      display: flex;
+      gap: 4px;
+    }
+
+    .mini-can {
+      width: 12px;
+      height: 28px;
+      background: linear-gradient(180deg, #94a3b8 20%, #1e3a8a 20%, #1e3a8a 60%, var(--silver-border) 60%);
+      border-radius: 2px;
+    }
+
+    .fridge-tag {
+      position: absolute;
+      bottom: -12px;
+      background: #059669;
+      color: var(--white);
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    /* Lata Toro Rojo CSS */
+    .can {
+      width: 72px;
+      height: 165px;
+      background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 30%, #1e3a8a 30%, #0a192f 70%, #f1f5f9 70%, #cbd5e1 100%);
+      border-radius: 8px 8px 12px 12px;
+      border: 2px solid #e2e8f0;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .can-lid {
+      position: absolute;
+      top: -6px;
+      width: 58px;
+      height: 6px;
+      background: #e2e8f0;
+      border-radius: 4px 4px 0 0;
+      border-top: 2px solid #fff;
+    }
+
+    .can-symbol {
+      width: 32px;
+      height: 32px;
+      background: var(--accent-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      border: 2px solid var(--accent-gold);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .can-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-top: 6px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    }
+
+    /* SECCIÓN 2: BENEFICIOS PYME */
+    #beneficios {
+      padding: 80px 0;
+      background-color: var(--white);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 50px auto;
+    }
+
+    .section-tag {
+      color: var(--accent-red);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .benefit-card {
+      background-color: var(--silver-bg);
+      border: 1px solid var(--silver-border);
+      border-radius: var(--border-radius);
+      padding: 36px 28px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: #94a3b8;
+    }
+
+    .benefit-icon-wrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background-color: rgba(220, 38, 38, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      color: var(--accent-red);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .benefit-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    /* SECCIÓN 3: PLANES */
+    #planes {
+      padding: 90px 0;
+      background-color: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: stretch;
+      margin-bottom: 36px;
+    }
+
+    .plan-card {
+      background: var(--white);
+      border: 1px solid var(--silver-border);
+      border-radius: var(--border-radius);
+      padding: 30px 22px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .plan-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .plan-card.highlighted {
+      background: var(--white);
+      border: 2px solid var(--accent-red);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-6px);
+    }
+
+    .plan-badge-highlight {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-red);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 50px;
+      letter-spacing: 0.6px;
+      white-space: nowrap;
+      box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+    }
+
+    .plan-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .plan-target {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .plan-volume {
+      background: var(--silver-bg);
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 20px;
+      border-left: 3px solid var(--primary-blue);
+    }
+
+    .highlighted .plan-volume {
+      background: #fef2f2;
+      border-left-color: var(--accent-red);
+    }
+
+    .plan-volume-main {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .plan-volume-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 26px;
+      flex-grow: 1;
+    }
+
+    .plan-features li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .plan-features li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: #059669;
+    }
+
+    .plan-cta {
+      width: 100%;
+    }
+
+    .plans-guarantee {
+      text-align: center;
+      background: var(--white);
+      border: 1px dashed var(--silver-border);
+      padding: 16px;
+      border-radius: 10px;
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    /* SECCIÓN 4: CÓMO FUNCIONA */
+    #funcionamiento {
+      padding: 85px 0;
+      background-color: var(--white);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      position: relative;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 24px 16px;
+      position: relative;
+    }
+
+    .step-number {
+      width: 58px;
+      height: 58px;
+      background: var(--silver-bg);
+      border: 2px solid var(--primary-blue);
+      color: var(--primary-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0 auto 20px auto;
+      transition: var(--transition);
+    }
+
+    .step-card:hover .step-number {
+      background: var(--primary-blue);
+      color: var(--white);
+      transform: scale(1.08);
+    }
+
+    .step-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* SECCIÓN 5: CIERRE Y FOOTER */
+    #cierre {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, #172554 100%);
+      color: var(--white);
+      padding: 85px 0 70px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .cierre-box {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .cierre-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .cierre-desc {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 32px;
+    }
+
+    .cierre-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 50px;
+    }
+
+    .cierre-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.12);
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #060f1d;
+      color: #94a3b8;
+      padding: 40px 0 30px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.88rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .commercial-channels {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    .commercial-channels a {
+      color: #f1f5f9;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .commercial-channels a:hover {
+      color: var(--accent-gold);
+      text-decoration: underline;
+    }
+
+    .commercial-notice {
+      color: #94a3b8;
+      font-size: 0.82rem;
+    }
+
+    .privacy-notice {
+      color: #64748b;
+      font-size: 0.78rem;
+      max-width: 720px;
+      line-height: 1.4;
+      margin-top: 4px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .plan-card.highlighted {
+        transform: none;
+      }
+      .hero-title {
+        font-size: 2.3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      .hero-cta-box {
+        align-items: center;
+      }
+      .hero-desc {
+        margin: 0 auto 28px auto;
+      }
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .plans-grid {
+        grid-template-columns: 1fr;
+      }
+      .commercial-channels {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .cierre-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-wrapper {
+        gap: 10px;
+      }
+      .nav-link {
+        display: none;
+      }
+      .nav-actions {
+        gap: 8px;
+      }
+      .brand-logo {
+        gap: 8px;
+        min-width: 0;
+      }
+      .logo-badge {
+        width: 32px;
+        height: 32px;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+      }
+      .logo-text {
+        font-size: 1rem;
+        white-space: nowrap;
+      }
+      .logo-text span {
+        font-size: 0.72rem;
+        margin-left: 2px;
+        letter-spacing: 0.5px;
+      }
+      .btn-nav {
+        padding: 9px 14px;
+        flex-shrink: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AVISO PROYECTO FICTICIO -->
+  <div class="aviso-ficticio" role="note">Proyecto académico ficticio – Magíster Marketing Analytics UAI</div>
+
+  <!-- HEADER NAVEGACIÓN -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo" aria-label="Toro Rojo Empresas Chile (Proyecto ficticio)">
+        <div class="logo-badge">TR</div>
+        <div class="logo-text">Toro Rojo <span>Empresas</span></div>
+      </a>
+      <nav class="nav-actions">
+        <a href="#planes" class="nav-link">Ver Planes</a>
+        <a href="https://forms.gle/d4ccwzaDoRhcCCFS7" target="_blank" rel="noopener" class="btn btn-nav cta-principal">Cotizar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-badge">Convenios Corporativos B2B en Chile</span>
+          <h1 class="hero-title">Energía que pone a volar <span>a tu oficina.</span></h1>
+          <p class="hero-desc">
+            Precios mayoristas, despacho programado y frigobar en comodato oficial para mantener la productividad y motivación de tu equipo de trabajo.
+          </p>
+          <div class="hero-cta-box">
+            <a href="https://forms.gle/d4ccwzaDoRhcCCFS7" id="cta-principal" target="_blank" rel="noopener" class="btn cta-button">
+              Cotizar
+            </a>
+            <span class="microcopy microcopy-light">⚡ Cotización rápida en línea · Sin compromiso de compra</span>
+          </div>
+        </div>
+
+        <!-- VISUAL LATA + FRIGOBAR EN COMODATO -->
+        <div class="hero-visual">
+          <div class="product-stage" aria-label="Frigobar oficial en comodato y lata Toro Rojo">
+            <!-- FRIGOBAR -->
+            <div class="fridge">
+              <div class="fridge-header">TORO ROJO</div>
+              <div class="fridge-glass">
+                <div class="mini-can-row">
+                  <div class="mini-can"></div>
+                  <div class="mini-can"></div>
+                  <div class="mini-can"></div>
+                  <div class="mini-can"></div>
+                </div>
+                <div class="fridge-shelf"></div>
+                <div class="mini-can-row">
+                  <div class="mini-can"></div>
+                  <div class="mini-can"></div>
+                  <div class="mini-can"></div>
+                  <div class="mini-can"></div>
+                </div>
+                <div class="fridge-shelf"></div>
+                <div class="mini-can-row">
+                  <div class="mini-can"></div>
+                  <div class="mini-can"></div>
+                  <div class="mini-can"></div>
+                  <div class="mini-can"></div>
+                </div>
+              </div>
+              <span class="fridge-tag">COMODATO OFICIAL</span>
+            </div>
+
+            <!-- LATA -->
+            <div class="can">
+              <div class="can-lid"></div>
+              <div class="can-symbol">TR</div>
+              <div class="can-label">250 ml</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. BENEFICIOS PYME -->
+    <section id="beneficios">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Ventajas para tu empresa</span>
+          <h2 class="section-title">Beneficios diseñados para PyMEs</h2>
+          <p class="section-subtitle">Soluciones de abastecimiento ágiles con tarifas preferenciales y soporte corporativo directo.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <!-- Beneficio 1 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3>Precios Progresivos por Volumen</h3>
+            <p>Accede a precios corporativos y mayoristas que mejoran de acuerdo al volumen consumido, optimizando el presupuesto de tu oficina.</p>
+          </div>
+
+          <!-- Beneficio 2 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3>Despacho Programado con Ejecutivo Dedicado</h3>
+            <p>Atención directa con un ejecutivo comercial B2B para coordinar propuestas, despacho programado a tu oficina y gestión de factura corporativa.</p>
+          </div>
+
+          <!-- Beneficio 3 -->
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            </div>
+            <h3>Frigobar Oficial en Comodato</h3>
+            <p>Refrigerador de la marca oficial en comodato (según condiciones de convenio) para almacenar y exhibir las bebidas frías en el espacio común.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. NUESTROS PLANES -->
+    <section id="planes">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Modalidades de convenio</span>
+          <h2 class="section-title">Nuestros Planes Corporativos</h2>
+          <p class="section-subtitle">Selecciona la dotación de tu equipo u organízalo por departamentos específicos.</p>
+        </div>
+
+        <div class="plans-grid">
+          <!-- Plan 1 -->
+          <div class="plan-card">
+            <h3 class="plan-title">PyME Starter</h3>
+            <div class="plan-target">5 a 10 personas</div>
+            <div class="plan-volume">
+              <div class="plan-volume-main">Desde 1 bandeja</div>
+              <div class="plan-volume-sub">(24 latas / mes)</div>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Mínimo accesible de compra
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Ideal para áreas o áreas con presupuesto libre
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Emisión de factura electrónica
+              </li>
+            </ul>
+            <a href="https://forms.gle/d4ccwzaDoRhcCCFS7" target="_blank" rel="noopener" class="btn btn-secondary plan-cta cta-principal">Cotizar</a>
+          </div>
+
+          <!-- Plan 2 (Recomendado) -->
+          <div class="plan-card highlighted">
+            <h3 class="plan-title">Oficina Activa</h3>
+            <div class="plan-target">11 a 25 personas</div>
+            <div class="plan-volume">
+              <div class="plan-volume-main">2 a 4 bandejas / mes</div>
+              <div class="plan-volume-sub">(48 a 96 latas / mes)</div>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <strong>Frigobar oficial incluido en comodato</strong>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Tarifa corporativa preferencial
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Despacho prioritario programado
+              </li>
+            </ul>
+            <a href="https://forms.gle/d4ccwzaDoRhcCCFS7" target="_blank" rel="noopener" class="btn cta-button plan-cta cta-principal">Cotizar</a>
+          </div>
+
+          <!-- Plan 3 -->
+          <div class="plan-card">
+            <h3 class="plan-title">Empresa Pro</h3>
+            <div class="plan-target">25 a 50 personas</div>
+            <div class="plan-volume">
+              <div class="plan-volume-main">5 a 8 bandejas / mes</div>
+              <div class="plan-volume-sub">(120 a 192 latas / mes)</div>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Frigobar corporativo en comodato
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Máximo tramo de descuento mayorista
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Ejecutivo de cuenta directo asignado
+              </li>
+            </ul>
+            <a href="https://forms.gle/d4ccwzaDoRhcCCFS7" target="_blank" rel="noopener" class="btn btn-secondary plan-cta cta-principal">Cotizar</a>
+          </div>
+
+          <!-- Plan 4 -->
+          <div class="plan-card">
+            <h3 class="plan-title">A Medida</h3>
+            <div class="plan-target">50+ personas o eventos</div>
+            <div class="plan-volume">
+              <div class="plan-volume-main">Volumen a pedido</div>
+              <div class="plan-volume-sub">Consumo especial / multisede</div>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Instalación de múltiples refrigeradores
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Activaciones y catering de oficina
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Atención corporativa personalizada
+              </li>
+            </ul>
+            <a href="https://forms.gle/d4ccwzaDoRhcCCFS7" target="_blank" rel="noopener" class="btn btn-secondary plan-cta cta-principal">Cotizar</a>
+          </div>
+        </div>
+
+        <div class="plans-guarantee">
+          🔒 Convenios flexibles · Ajuste o revisión periódica de pedidos según los requerimientos de tu empresa o área.
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ¿CÓMO FUNCIONA? -->
+    <section id="funcionamiento">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Proceso simple</span>
+          <h2 class="section-title">¿Cómo funciona el convenio?</h2>
+          <p class="section-subtitle">Activa el suministro de energía para tu oficina en solo tres pasos sencillos.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Cotización online</h3>
+            <p>Completas el breve formulario en línea indicando el tamaño de tu equipo o el volumen aproximado requerido.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Contacto con ejecutivo</h3>
+            <p>Un ejecutivo de Toro Rojo se contacta directamente para presentar la propuesta económica formal, resolver dudas y gestionar la facturación.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Recepción en oficina</h3>
+            <p>Recibes las bebidas y la instalación del frigobar en comodato en tu lugar de trabajo para que el equipo disfrute de inmediato.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CIERRE -->
+    <section id="cierre">
+      <div class="container">
+        <div class="cierre-box">
+          <h2 class="cierre-title">Dale energía a tu oficina</h2>
+          <p class="cierre-desc">
+            Suma un beneficio pensado para tu equipo de trabajo con el abastecimiento directo de Toro Rojo.
+          </p>
+          <div class="cierre-cta-wrap">
+            <a href="https://forms.gle/d4ccwzaDoRhcCCFS7" target="_blank" rel="noopener" class="btn cta-button cta-principal">
+              Cotizar
+            </a>
+            <span class="microcopy microcopy-light">⚡ Cotización rápida en línea · Sin compromiso de compra</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA (CANALES COMERCIALES DIRECTOS SIN REDES) -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">Toro Rojo (Proyecto ficticio) · Canal Corporativo B2B</div>
+      <div class="commercial-channels">
+        <a href="mailto:ventas.b2b@tororojo.example">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          ventas.b2b@tororojo.example
+        </a>
+        <span>|</span>
+        <a href="tel:+56220000000">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          +56 2 2000 0000 (Ficticio)
+        </a>
+      </div>
+      <p class="commercial-notice">Facturación electrónica para empresas · RUT Comercial · Cobertura y despachos según zona</p>
+      <p class="privacy-notice">Privacidad y Protección de Datos: Este sitio utiliza Google Analytics 4 para recopilar métricas anónimas de interacción y navegación (sin registrar información personal identificable). La solicitud de cotización se gestiona a través de un formulario externo de Google Forms, donde los datos de contacto y empresa ingresados son tratados de forma confidencial y utilizados exclusivamente con fines comerciales para la elaboración de la propuesta solicitada.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Interacciones de navegación y seguimiento de clics en llamadas a la acción
+    document.addEventListener('DOMContentLoaded', () => {
+      const ctas = document.querySelectorAll('#cta-principal, .cta-principal');
+      ctas.forEach(cta => {
+        cta.addEventListener('click', () => {
+          // Evento medible listo para Google Analytics o Tag Manager
+          if (typeof gtag === 'function') {
+            // Ubicación del CTA: header, hero, cierre o plan_<nombre_del_plan>
+            const seccion = cta.closest('section');
+            let ubicacion = cta.closest('header') ? 'header' : (seccion ? seccion.id : 'otro');
+            const plan = cta.closest('.plan-card');
+            if (plan) {
+              const nombrePlan = plan.querySelector('.plan-title').textContent.trim().toLowerCase()
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '_');
+              ubicacion = 'plan_' + nombrePlan;
+            }
+            gtag('event', 'clic_cta_principal', {
+              'cta_ubicacion': ubicacion
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
