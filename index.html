@@ -1196,40 +1196,30 @@
   </footer>
 
   <script>
-    // Interacciones de navegación y seguimiento de clics en llamadas a la acción
-    document.addEventListener('DOMContentLoaded', () => {
-      const ctas = document.querySelectorAll('#cta-principal, .cta-principal');
-      ctas.forEach(cta => {
-        cta.addEventListener('click', () => {
-          // Evento medible listo para Google Analytics o Tag Manager
-          if (typeof gtag === 'function') {
-            // Ubicación del CTA: header, hero, cierre o plan_<nombre_del_plan>
-            const seccion = cta.closest('section');
-            let ubicacion = cta.closest('header') ? 'header' : (seccion ? seccion.id : 'otro');
-            const plan = cta.closest('.plan-card');
-            if (plan) {
-              const nombrePlan = plan.querySelector('.plan-title').textContent.trim().toLowerCase()
+    // Envía el evento clic_cta_principal cuando el visitante hace clic en el CTA
+    document.querySelectorAll('#cta-principal, .cta-principal').forEach(function (boton) {
+      boton.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          var seccion = boton.closest('section');
+          var ubicacion = boton.closest('header') ? 'header' : (seccion && seccion.id ? seccion.id : 'sin_seccion');
+          
+          var parametros = {
+            ubicacion: ubicacion
+          };
+
+          var plan = boton.closest('.plan-card');
+          if (plan) {
+            var elTitulo = plan.querySelector('.plan-title');
+            if (elTitulo) {
+              parametros.plan = elTitulo.textContent.trim().toLowerCase()
                 .normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '_');
-              ubicacion = 'plan_' + nombrePlan;
             }
-            gtag('event', 'clic_cta_principal', {
-              'cta_ubicacion': ubicacion
-            });
           }
-        });
+
+          gtag('event', 'clic_cta_principal', parametros);
+        }
       });
     });
   </script>
-  <script>
-  // Envía el evento clic_cta_principal cuando el visitante hace clic en el CTA
-  document.querySelectorAll('#cta-principal, .cta-principal').forEach(function (boton) {
-    boton.addEventListener('click', function () {
-      var seccion = boton.closest('section');
-      gtag('event', 'clic_cta_principal', {
-        ubicacion: seccion && seccion.id ? seccion.id : 'sin_seccion'
-      });
-    });
-  });
-</script>
 </body>
 </html>
